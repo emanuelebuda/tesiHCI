@@ -1,4 +1,4 @@
-/* @pjs preload="micro.png"; */
+/* @pjs preload="micro.jpg"; */
 
 PImage img;
 void setup() {
