@@ -79,7 +79,7 @@ void draw(){
   
   if(count == 3) {
     String [] finalLogs = concat(oldCodeList, logs);
-    saveStrings("https://emanuelebuda.github.io/tesiHCI/logs.txt", finalLogs);
+    saveStrings("logs.txt", finalLogs);
     println("saved");
     keyPressed();
   }
