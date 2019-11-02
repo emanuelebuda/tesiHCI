@@ -43,7 +43,7 @@ void setup(){
 void draw(){
   image(img,0,0); 
   /*println(mouseX + " : " + mouseY);*/
-  println(count);
+  //println(count);
   
   
   update(mouseX, mouseY);
@@ -68,6 +68,7 @@ void draw(){
   
   if(count == 3) {
       saveStrings("log.txt", logs);
+      println("saved");
       keyPressed();
   }
   
