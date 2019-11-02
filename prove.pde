@@ -1,6 +1,7 @@
 /* @pjs preload="micro.jpg"; */
 
 PImage img;
+StringList logs;
 
 /*
 PrintWriter output; 
@@ -25,7 +26,10 @@ boolean gO = false;
 String code;
 int count;
 
+String list[];
+
 void setup(){
+  logs = new StringList();
   img = loadImage("micro.jpg");
   size(600,800);
   cH = color(0,0,0,0);
@@ -42,6 +46,7 @@ void draw(){
   /*println(mouseX + " : " + mouseY);*/
   println(count);
   
+  
   update(mouseX, mouseY);
   if (cO1) {
     fill(cH);
@@ -56,15 +61,17 @@ void draw(){
   ellipse(cX2, cY2, cD, cD);
   }
   if (gO) {
-    fill(cH);
+  fill(cH);
   fill(255,0,0,0);
   stroke(204, 102, 0);
   ellipse(goX, goY, goD, goD);
   }
   
-  /*if(count == 3) {
+  if(count == 3) {
+      String[] log = logs.array();
+      saveStrings("log.txt", log);
       keyPressed();
-  }*/
+  }
   
 }
 
@@ -96,8 +103,8 @@ void mousePressed() {
   if (cO1) {
     cH = color(0);
     /*click.play();*/
-    code = code + hour() + "_" + minute() + "_" + second() + "_" + millis() + " " + "A,";
-  }
+    code = code + hour() + "_" + minute() + "_" + second() + "_" + millis() + " " + "A,";  
+}
   if (cO2) {
     cH = color(0);
     /*click.play();*/
@@ -107,13 +114,14 @@ void mousePressed() {
     cH = color(0);
     /*click.play();*/
     /*output.println(code);*/
+    logs.append(code);
     code = "";
     count = count + 1;
     }
 }
 
 void keyPressed() {
-  output.flush(); // Writes the remaining data to the file
-  output.close(); // Finishes the file
+  /*output.flush(); // Writes the remaining data to the file
+  output.close(); // Finishes the file*/
   background(255);
 }
