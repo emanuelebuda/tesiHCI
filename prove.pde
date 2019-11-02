@@ -1,7 +1,7 @@
 /* @pjs preload="micro.jpg"; */
 
 PImage img;
-StringList logs;
+String[] logs = new String[3];
 
 /*
 PrintWriter output; 
@@ -29,7 +29,6 @@ int count;
 String list[];
 
 void setup(){
-  logs = new StringList();
   img = loadImage("micro.jpg");
   size(600,800);
   cH = color(0,0,0,0);
@@ -68,8 +67,7 @@ void draw(){
   }
   
   if(count == 3) {
-      String[] log = logs.array();
-      saveStrings("log.txt", log);
+      saveStrings("log.txt", logs);
       keyPressed();
   }
   
@@ -114,7 +112,7 @@ void mousePressed() {
     cH = color(0);
     /*click.play();*/
     /*output.println(code);*/
-    logs.append(code);
+    logs[count] = code;
     code = "";
     count = count + 1;
     }
