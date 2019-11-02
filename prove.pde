@@ -1,15 +1,16 @@
 /* @pjs preload="micro.jpg"; */
+
 /*import processing.sound.*;
 SoundFile click;
+String clickName = "click.mp3";
+String path;*/
+
 PImage img;
-String clickName = "click.mp3";*/
-String path;
-PrintWriter output;
+PrintWriter output; 
 
 int mx = mouseX;
 int my = mouseY;
 
-/*int hour = hour(),min = minute(),sec = second(), mil = millis();*/
 int cX1 = 222, cY1 = 263; 
 int cX2 = 304, cY2 = 263;
 int goX = 263, goY=419, goD = 60;
@@ -96,10 +97,12 @@ void mousePressed() {
   }
   if (cO2) {
     cH = color(0);
+    /*click.play();*/
     code = code + (hour() + "_" + minute() + "_" + second() + "_" + millis() + " " + "B,");
   }
   if (gO) {
     cH = color(0);
+    /*click.play();*/
     output.println(code);
     code = "";
     count = count + 1;
