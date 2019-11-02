@@ -2,6 +2,8 @@
 
 PImage img;
 String[] logs = new String[3];
+String[] oldCodeList = new String[1];
+String[] lines;
 
 /*
 PrintWriter output; 
@@ -27,6 +29,8 @@ String code;
 int count;
 
 String list[];
+String finalLogs[];
+String oldCode = "";
 
 void setup(){
   img = loadImage("micro.jpg");
@@ -38,6 +42,13 @@ void setup(){
   strokeWeight(4);
   /*path = sketchPath(clickName);
   click = new SoundFile(this, path);*/
+  //String oldCodeList[] = new String[1];
+  String lines[] = loadStrings("https://emanuelebuda.github.io/tesiHCI/logs.txt");
+  for (int i=0; i < lines.length; i++) {
+    oldCode = oldCode + lines[i] + "\n";
+  }
+  oldCodeList[0] = oldCode;
+  
 }
 
 void draw(){
@@ -67,9 +78,10 @@ void draw(){
   }
   
   if(count == 3) {
-      saveStrings("log.txt", logs);
-      println("saved");
-      keyPressed();
+    String [] finalLogs = concat(oldCodeList, logs);
+    saveStrings("https://emanuelebuda.github.io/tesiHCI/logs.txt", finalLogs);
+    println("saved");
+    keyPressed();
   }
   
 }
