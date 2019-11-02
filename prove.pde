@@ -1,8 +1,8 @@
 /* @pjs preload="micro.jpg"; */
-import processing.sound.*;
+/*import processing.sound.*;
 SoundFile click;
 PImage img;
-String clickName = "click.mp3";
+String clickName = "click.mp3";*/
 String path;
 PrintWriter output;
 
@@ -29,8 +29,8 @@ void setup(){
   code = "";
   count = 0;
   strokeWeight(4);
-  path = sketchPath(clickName);
-  click = new SoundFile(this, path);
+  /*path = sketchPath(clickName);
+  click = new SoundFile(this, path);*/
 }
 
 void draw(){
@@ -91,7 +91,7 @@ boolean overCircle(int x, int y, int diameter) {
 void mousePressed() {
   if (cO1) {
     cH = color(0);
-    click.play();
+    /*click.play();*/
     code = code + hour() + "_" + minute() + "_" + second() + "_" + millis() + " " + "A,";
   }
   if (cO2) {
