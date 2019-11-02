@@ -1,12 +1,14 @@
 /* @pjs preload="micro.jpg"; */
 
+PImage img;
+PrintWriter output; 
+
 /*import processing.sound.*;
 SoundFile click;
 String clickName = "click.mp3";
 String path;*/
 
-PImage img;
-PrintWriter output; 
+
 
 int mx = mouseX;
 int my = mouseY;
