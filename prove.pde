@@ -5,9 +5,8 @@ String[] logs = new String[3];
 String[] oldCodeList = new String[1];
 String[] lines;
 
-/*
 PrintWriter output; 
-import processing.sound.*;
+/*import processing.sound.*;
 SoundFile click;
 String clickName = "click.mp3";
 String path;*/
@@ -36,13 +35,12 @@ void setup(){
   img = loadImage("micro.jpg");
   size(600,800);
   cH = color(0,0,0,0);
-  /*output = createWriter("logs.txt"); */
+  output = createWriter("logs.txt"); 
   code = "";
   count = 0;
   strokeWeight(4);
-  /*path = sketchPath(clickName);
-  click = new SoundFile(this, path);*/
-  //String oldCodeList[] = new String[1];
+  //path = sketchPath(clickName);
+  /*click = new SoundFile(this, path);*/
   String lines[] = loadStrings("https://emanuelebuda.github.io/tesiHCI/logs.txt");
   for (int i=0; i < lines.length; i++) {
     oldCode = oldCode + lines[i] + "\n";
@@ -78,8 +76,8 @@ void draw(){
   }
   
   if(count == 3) {
-    String [] finalLogs = concat(oldCodeList, logs);
-    saveStrings("/data/logs.txt", finalLogs);
+    //String [] finalLogs = concat(oldCodeList, logs);
+    //saveStrings("https://emanuelebuda.github.io/tesiHCI/logs.txt", finalLogs);
     println("saved");
     keyPressed();
   }
@@ -124,7 +122,7 @@ void mousePressed() {
   if (gO) {
     cH = color(0);
     /*click.play();*/
-    /*output.println(code);*/
+    output.println(oldCode + code);
     logs[count] = code;
     code = "";
     count = count + 1;
@@ -132,7 +130,7 @@ void mousePressed() {
 }
 
 void keyPressed() {
-  /*output.flush(); // Writes the remaining data to the file
+  output.flush(); // Writes the remaining data to the file
   output.close(); // Finishes the file*/
   background(255);
 }
