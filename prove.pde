@@ -1,3 +1,4 @@
+/* @pjs preload="micro.jpg"; */
 import processing.sound.*;
 SoundFile click;
 PImage img;
