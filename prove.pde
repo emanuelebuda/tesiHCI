@@ -62,9 +62,9 @@ void draw(){
   ellipse(goX, goY, goD, goD);
   }
   
-  if(count == 3) {
+  /*if(count == 3) {
       keyPressed();
-  }
+  }*/
   
 }
 
