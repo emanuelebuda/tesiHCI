@@ -79,7 +79,7 @@ void draw(){
   
   if(count == 3) {
     String [] finalLogs = concat(oldCodeList, logs);
-    saveStrings("logs.txt", finalLogs);
+    saveStrings("/data/logs.txt", finalLogs);
     println("saved");
     keyPressed();
   }
