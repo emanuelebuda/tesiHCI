@@ -1,9 +1,10 @@
 /* @pjs preload="micro.jpg"; */
 
 PImage img;
-PrintWriter output; 
 
-/*import processing.sound.*;
+/*
+PrintWriter output; 
+import processing.sound.*;
 SoundFile click;
 String clickName = "click.mp3";
 String path;*/
@@ -28,7 +29,7 @@ void setup(){
   img = loadImage("micro.jpg");
   size(600,800);
   cH = color(0,0,0,0);
-  output = createWriter("logs.txt"); 
+  /*output = createWriter("logs.txt"); */
   code = "";
   count = 0;
   strokeWeight(4);
@@ -105,7 +106,7 @@ void mousePressed() {
   if (gO) {
     cH = color(0);
     /*click.play();*/
-    output.println(code);
+    /*output.println(code);*/
     code = "";
     count = count + 1;
     }
