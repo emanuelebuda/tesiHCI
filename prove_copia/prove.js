@@ -32,6 +32,7 @@ String finalLogs[];
 String oldCode = "";
 
 void setup(){
+  createCanvas(600, 800);
   img = loadImage("micro.jpg");
   size(600,800);
   cH = color(0,0,0,0);
