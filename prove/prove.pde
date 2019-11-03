@@ -43,7 +43,7 @@ void setup(){
   /*path = sketchPath(clickName);
   click = new SoundFile(this, path);*/
   //String oldCodeList[] = new String[1];
-  String lines[] = loadStrings("https://emanuelebuda.github.io/tesiHCI/logs.txt");
+  String lines[] = loadStrings("https://emanuelebuda.github.io/tesiHCI/prove/logs.txt");
   for (int i=0; i < lines.length; i++) {
     oldCode = oldCode + lines[i] + "\n";
   }
@@ -79,7 +79,7 @@ void draw(){
   
   if(count == 3) {
     String [] finalLogs = concat(oldCodeList, logs);
-    saveStrings("https://emanuelebuda.github.io/tesiHCI/logs.txt", finalLogs);
+    saveStrings("logs.txt", finalLogs);
     println("saved");
     keyPressed();
   }
